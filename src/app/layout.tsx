@@ -53,7 +53,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{
-          backgroundImage: "url('/images/bg-main.png')",
+          backgroundImage: "url('/images/Gemini_Generated_Image_kq6tpnkq6tpnkq6t.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
