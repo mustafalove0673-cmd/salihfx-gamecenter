@@ -993,29 +993,15 @@ function GaleriSection() {
   const [zoomed, setZoomed] = useState(false);
 
   const photos = [
-    { src: "/images/salihfx/s.png", label: "Dış Görünüm" },
-    { src: "/images/salihfx/sd.png", label: "Giriş" },
-    { src: "/images/salihfx/ad.png", label: "Oyun Alanı" },
-    { src: "/images/salihfx/d.png", label: "PC İstasyonları" },
-    { src: "/images/luxury/luxury-gaming-setup.png", label: "Premium Setup" },
-    { src: "/images/luxury/luxury-vip-room.png", label: "VIP Oda" },
-    { src: "/images/luxury/luxury-racing-sim.png", label: "Yarış Simülatörü" },
-    { src: "/images/luxury/luxury-esports-arena.png", label: "E-Spor Alanı" },
-    { src: "/images/luxury/luxury-neon-hallway.png", label: "Neon Koridor" },
-    { src: "/images/luxury/luxury-pc-closeup.png", label: "Premium PC" },
-    { src: "/images/gallery/pursaklar-pc.jpg", label: "RTX Gaming PC" },
-    { src: "/images/gallery/vs-01.jpg", label: "Gaming Alanı" },
+    { src: "/images/salihfx/s.png", label: "SalihFx Game Center - Dış Görünüm" },
+    { src: "/images/salihfx/sd.png", label: "SalihFx Game Center - Giriş" },
+    { src: "/images/salihfx/ad.png", label: "SalihFx Game Center - Oyun Alanı" },
+    { src: "/images/salihfx/d.png", label: "SalihFx Game Center - PC İstasyonları" },
+    { src: "/images/gallery/pursaklar-pc.jpg", label: "RTX Gaming PC İstasyonu" },
+    { src: "/images/gallery/vs-01.jpg", label: "Modern Gaming Alanı" },
   ];
 
-  const promos = [
-    { src: "/images/gallery/promo-csgo.jpg", label: "CS:GO Heyecanı" },
-    { src: "/images/gallery/promo-valorant.jpg", label: "Valorant Takım" },
-    { src: "/images/gallery/promo-playstation.jpg", label: "Playstation Turnuva" },
-    { src: "/images/gallery/promo-ps5.jpg", label: "PS5 Turnuva" },
-    { src: "/images/gallery/promo-yaş-sınırlı-değil.jpg", label: "Yaş Sınırlı Değil" },
-  ];
-
-  const allImages = [...photos, ...promos];
+  const allImages = [...photos];
 
   const go = useCallback((dir: number) => {
     if (activeIdx === null) return;
@@ -1045,56 +1031,15 @@ function GaleriSection() {
           </motion.h2>
           <motion.div variants={pop} custom={0.05} className="mt-2.5 flex items-center justify-center gap-4 sm:gap-6">
             <span className="h-px w-12 sm:w-20 bg-gradient-to-r from-transparent to-[#ff8c00]/40" />
-            <span className="text-[14px] sm:text-[15px] font-bold text-white tracking-wide">{photos.length + promos.length} Fotoğraf</span>
+            <span className="text-[14px] sm:text-[15px] font-bold text-white tracking-wide">{photos.length} Fotoğraf</span>
             <span className="h-px w-12 sm:w-20 bg-gradient-to-l from-transparent to-[#00d4e8]/40" />
           </motion.div>
         </motion.div>
 
-        {/* ════════ PROMO CAROUSEL ════════ */}
-        <motion.div initial="hidden" animate={inView ? "show" : "hidden"} variants={stagger} className="mb-8 sm:mb-10">
-          <div className="flex gap-3 sm:gap-4 overflow-x-auto pb-3 snap-x snap-mandatory scrollbar-none -mx-4 px-4 sm:-mx-6 sm:px-6">
-            {promos.map((img, i) => {
-              const globalIdx = photos.length + i;
-              return (
-                <motion.div
-                  key={img.src}
-                  variants={pop}
-                  custom={i * 0.02}
-                  whileHover={{ scale: 1.03, y: -6 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="flex-shrink-0 snap-start relative group cursor-pointer rounded-2xl sm:rounded-3xl overflow-hidden border border-white/[0.08] bg-white/[0.03] w-[260px] sm:w-[320px] md:w-[380px] aspect-[16/9]"
-                  onClick={() => setActiveIdx(globalIdx)}
-                >
-                  <img src={img.src} alt={img.label} loading="lazy" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" draggable={false} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-black/10" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-black/40 to-transparent" />
-                  <div className="absolute top-0 left-0 w-10 h-10 pointer-events-none">
-                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-[#ff2d55] to-transparent" />
-                    <div className="absolute top-0 left-0 h-full w-px bg-gradient-to-b from-[#ff2d55] to-transparent" />
-                  </div>
-                  <div className="absolute top-0 right-0 w-10 h-10 pointer-events-none">
-                    <div className="absolute top-0 right-0 w-full h-px bg-gradient-to-l from-[#00d4e8] to-transparent" />
-                    <div className="absolute top-0 right-0 h-full w-px bg-gradient-to-b from-[#00d4e8] to-transparent" />
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 z-10">
-                    <span className="inline-block px-2 py-0.5 rounded-md bg-[#ff2d55]/90 text-[8px] sm:text-[9px] font-black text-white uppercase tracking-wider mb-1.5">Etkinlik</span>
-                    <p className="text-[12px] sm:text-[14px] font-bold text-white">{img.label}</p>
-                  </div>
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                    <div className="h-10 w-10 sm:h-12 sm:w-12 rounded-full bg-white/10 flex items-center justify-center">
-                      <Expand className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </motion.div>
-
         {/* ════════ FOTOĞRAF GRID ════════ */}
         <motion.div initial="hidden" animate={inView ? "show" : "hidden"} variants={stagger}>
-          <div className="grid grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 mb-2.5 sm:mb-3 md:mb-4">
-            {photos.slice(0, 3).map((img, i) => (
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+            {photos.map((img, i) => (
               <motion.div
                 key={img.src} variants={pop} custom={i * 0.02}
                 whileHover={{ scale: 1.04, y: -6 }} whileTap={{ scale: 0.97 }}
@@ -1110,56 +1055,6 @@ function GaleriSection() {
               </motion.div>
             ))}
           </div>
-          <div className="grid grid-cols-4 gap-2 sm:gap-2.5 md:gap-3 mb-2.5 sm:mb-3 md:mb-4">
-            {photos.slice(3, 7).map((img, i) => (
-              <motion.div key={img.src} variants={pop} custom={(i + 3) * 0.04}
-                whileHover={{ scale: 1.06, y: -4 }} whileTap={{ scale: 0.97 }}
-                className="relative group cursor-pointer rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.05] bg-white/[0.02] hover:border-[#00d4e8]/25 hover:shadow-[0_0_20px_#00d4e815] transition-all duration-400"
-                onClick={() => setActiveIdx(i + 3)}
-              >
-                <img src={img.src} alt={img.label} loading="lazy" className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110" draggable={false} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                <div className="absolute bottom-1.5 sm:bottom-2 left-1.5 sm:left-2 right-1.5 sm:right-2 flex items-end justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                  <p className="text-[7px] sm:text-[8px] font-bold text-white/80">{img.label}</p>
-                  <Expand className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/70" />
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          <div className="grid grid-cols-3 gap-2.5 sm:gap-3 md:gap-4 mb-2.5 sm:mb-3 md:mb-4">
-            {photos.slice(7, 10).map((img, i) => (
-              <motion.div key={img.src} variants={pop} custom={(i + 7) * 0.04}
-                whileHover={{ scale: 1.04, y: -6 }} whileTap={{ scale: 0.97 }}
-                className="relative group cursor-pointer rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden border border-white/[0.06] bg-white/[0.02] hover:border-[#ff2d55]/25 hover:shadow-[0_0_25px_#ff2d5515] transition-all duration-400"
-                onClick={() => setActiveIdx(i + 7)}
-              >
-                <img src={img.src} alt={img.label} loading="lazy" className="w-full aspect-[3/4] sm:aspect-[4/5] object-cover transition-transform duration-700 group-hover:scale-110" draggable={false} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                <div className="absolute bottom-2 sm:bottom-3 left-2 sm:left-3 right-2 sm:right-3 flex items-end justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                  <p className="text-[9px] sm:text-[10px] font-bold text-white/90">{img.label}</p>
-                  <div className="h-5 w-5 sm:h-6 sm:w-6 rounded-md bg-white/10 flex items-center justify-center flex-shrink-0"><Expand className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-white" /></div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-          {photos.length > 10 && (
-            <div className="grid grid-cols-4 gap-2 sm:gap-2.5 md:gap-3">
-              {photos.slice(10).map((img, i) => (
-                <motion.div key={img.src} variants={pop} custom={(i + 10) * 0.04}
-                  whileHover={{ scale: 1.06, y: -4 }} whileTap={{ scale: 0.97 }}
-                  className="relative group cursor-pointer rounded-lg sm:rounded-xl overflow-hidden border border-white/[0.05] bg-white/[0.02] hover:border-[#ff8c00]/25 hover:shadow-[0_0_20px_#ff8c0015] transition-all duration-400"
-                  onClick={() => setActiveIdx(photos.indexOf(img))}
-                >
-                  <img src={img.src} alt={img.label} loading="lazy" className="w-full aspect-square object-cover transition-transform duration-700 group-hover:scale-110" draggable={false} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300" />
-                  <div className="absolute bottom-1.5 sm:bottom-2 left-1.5 sm:left-2 right-1.5 sm:right-2 flex items-end justify-between opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-2 group-hover:translate-y-0">
-                    <p className="text-[7px] sm:text-[8px] font-bold text-white/80">{img.label}</p>
-                    <Expand className="h-3 w-3 sm:h-3.5 sm:w-3.5 text-white/70" />
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          )}
         </motion.div>
 
         {/* ═══ INSTAGRAM ═══ */}
