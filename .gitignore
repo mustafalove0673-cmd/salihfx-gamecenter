@@ -1,0 +1,14 @@
+node_modules/
+.next/
+*.log
+db/
+download/
+skills/
+examples/
+tsconfig.tsbuildinfo
+*.tsbuildinfo
+.env
+.env.*
+search_results.json
+bun.lock
+package-lock.json
