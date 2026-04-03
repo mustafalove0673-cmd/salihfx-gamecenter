@@ -993,6 +993,8 @@ function GaleriSection() {
   const [zoomed, setZoomed] = useState(false);
 
   const photos = [
+    { src: "/images/Gemini_Generated_Image_kq6tpnkq6tpnkq6t.png", label: "SalihFx Game Center - Ana Görünüm" },
+    { src: "/images/Gemini_Generated_Image_f2b8a3f2b8a3f2b8.png", label: "SalihFx Game Center - Logo" },
     { src: "/images/salihfx/s.png", label: "SalihFx Game Center - Dış Görünüm" },
     { src: "/images/salihfx/sd.png", label: "SalihFx Game Center - Giriş" },
     { src: "/images/salihfx/ad.png", label: "SalihFx Game Center - Oyun Alanı" },
