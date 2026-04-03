@@ -21,24 +21,24 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Versus Game Center | Premium E-Spor & Gaming Deneyimi",
+  title: "SalihFx Game Center | Premium E-Spor & Gaming Deneyimi",
   description:
     "Ankara'nın premium gaming deneyimi. E-spor, yarış simülatörü ve VIP odalar.",
   keywords: [
-    "Versus",
+    "SalihFx",
     "Game Center",
     "E-spor",
     "Gaming",
     "Ankara",
-    "Kızılay",
-    "Pursaklar",
+    "Çubuk",
+    "İnternet Kafe",
   ],
-  authors: [{ name: "Versus Game Center" }],
+  authors: [{ name: "SalihFx Game Center" }],
   openGraph: {
-    title: "Versus Game Center",
+    title: "SalihFx Game Center",
     description:
       "Ankara'nın premium gaming deneyimi. E-spor, yarış simülatörü ve VIP odalar.",
-    siteName: "Versus Game Center",
+    siteName: "SalihFx Game Center",
     type: "website",
   },
 };
