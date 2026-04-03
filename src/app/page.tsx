@@ -1249,14 +1249,12 @@ function Contact() {
         </div>
 
         {/* Aktif Şube Detayları — Büyük Tasarım */}
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeTab}
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-            className="rounded-2xl border border-white/[0.06] bg-black/85 overflow-hidden neon-glow rgb-border-spin">
+        <motion.div
+          key="cubuk"
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+          className="rounded-2xl border border-white/[0.06] bg-black/85 overflow-hidden neon-glow rgb-border-spin">
             {/* Gradient üst bar */}
             <div className={`h-1 bg-gradient-to-r ${b.glowFrom} ${b.glowTo}`} />
 
@@ -1361,7 +1359,6 @@ function Contact() {
             {/* Neon alt bar */}
             <div className="h-px bg-gradient-to-r from-transparent via-white/[0.08] to-transparent" />
           </motion.div>
-        </AnimatePresence>
       </motion.div>
     </section>
   );
