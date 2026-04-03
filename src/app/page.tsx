@@ -40,6 +40,7 @@ import {
 } from "lucide-react";
 import GameLibrary from "@/components/GameLibrary";
 import LoadingScreen from "@/components/LoadingScreen";
+import TorchComponent from "@/components/TorchComponent";
 
 /* ═══════════════════════════════════════════════
    ANİMASYONLAR
@@ -2506,6 +2507,12 @@ export default function Home() {
       <div className="relative z-10 mx-auto max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-4 sm:px-6"><div className="h-px bg-gradient-to-r from-transparent via-orange-500/20 to-transparent my-2" /></div>
       <PlayStationSection />
       <RgbGameStrip image="/images/games/rgb/ps5-zone.png" label="PlayStation Zone" />
+      
+      {/* Interactive Torch Component */}
+      <div className="relative z-10 py-8 flex justify-center">
+        <TorchComponent />
+      </div>
+      
       {/* Separator — Blue */}
       <div className="relative z-10 mx-auto max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-4 sm:px-6"><div className="h-px bg-gradient-to-r from-transparent via-blue-500/20 to-transparent my-2" /></div>
       <Footer />
