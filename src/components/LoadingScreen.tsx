@@ -28,7 +28,7 @@ export default function LoadingScreen() {
               transition={{ duration: 0.2, type: "spring", stiffness: 300, damping: 20 }}
               className="h-14 w-14 sm:h-16 sm:w-16 rounded-xl overflow-hidden border border-white/10"
             >
-              <img src="/versus-logo-new.png" alt="V" className="h-full w-full object-cover" />
+              <img src="/images/salihfx-logo.png" alt="SF" className="h-full w-full object-cover" />
             </motion.div>
 
             {/* Text */}
@@ -38,7 +38,7 @@ export default function LoadingScreen() {
               transition={{ delay: 0.05 }}
               className="text-[20px] sm:text-[24px] font-black tracking-[0.2em] text-white"
             >
-              VERSUS
+              SALİH FX
             </motion.p>
 
             {/* Spinner */}

@@ -423,7 +423,7 @@ export default function GameLibrary({ isOpen, onClose }: GameLibraryProps) {
                   </div>
                 </div>
                 <p className="text-[8px] sm:text-[9px] text-gray-300">
-                  VERSUS Game Center &copy; {new Date().getFullYear()}
+                  SALİH FX Game Center &copy; {new Date().getFullYear()}
                 </p>
               </div>
             </div>

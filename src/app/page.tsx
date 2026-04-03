@@ -149,7 +149,7 @@ function Header() {
       <div className="flex justify-center pt-3 pointer-events-auto">
         <div className="flex items-center gap-2 sm:gap-3">
           <div className="relative h-8 w-8 sm:h-10 sm:w-10 shrink-0 overflow-hidden rounded-lg">
-            <img src="/versus-logo-new.png" alt="V" className="h-full w-full object-cover" />
+            <img src="/images/salihfx-logo.png" alt="SF" className="h-full w-full object-cover" />
             <div className="absolute inset-0 rounded-lg ring-1 ring-white/10" />
           </div>
           <div className="flex flex-col leading-none">
@@ -276,7 +276,7 @@ function Hero() {
           <span className="text-[10px] sm:text-[11px] md:text-[12px] font-bold tracking-wide text-gray-100">Ankara / Çubuk</span>
         </motion.div>
 
-        {/* VERSUS text */}
+        {/* SALİH FX text */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={started ? { opacity: 1, scale: 1 } : {}}
@@ -287,7 +287,7 @@ function Hero() {
           </p>
         </motion.div>
 
-        {/* Massive VS emblem */}
+        {/* Massive SF emblem */}
         <motion.div
           initial={{ opacity: 0, scale: 0.5, filter: "blur(20px)" }}
           animate={started ? { opacity: 1, scale: 1, filter: "blur(0px)" } : {}}
@@ -996,13 +996,14 @@ function GaleriSection() {
     { src: "/images/salihfx/sd.png", label: "Giriş" },
     { src: "/images/salihfx/ad.png", label: "Oyun Alanı" },
     { src: "/images/salihfx/d.png", label: "PC İstasyonları" },
-    { src: "/images/gallery/pursaklar-sim-1.jpg", label: "Yarış Simülatörü" },
-    { src: "/images/gallery/pursaklar-ekipman.jpg", label: "Ekipman Detay" },
+    { src: "/images/luxury/luxury-gaming-setup.png", label: "Premium Setup" },
+    { src: "/images/luxury/luxury-vip-room.png", label: "VIP Oda" },
+    { src: "/images/luxury/luxury-racing-sim.png", label: "Yarış Simülatörü" },
+    { src: "/images/luxury/luxury-esports-arena.png", label: "E-Spor Alanı" },
+    { src: "/images/luxury/luxury-neon-hallway.png", label: "Neon Koridor" },
+    { src: "/images/luxury/luxury-pc-closeup.png", label: "Premium PC" },
     { src: "/images/gallery/pursaklar-pc.jpg", label: "RTX Gaming PC" },
     { src: "/images/gallery/vs-01.jpg", label: "Gaming Alanı" },
-    { src: "/images/gallery/vs-02.jpg", label: "PC İstasyonları" },
-    { src: "/images/gallery/vs-03.jpg", label: "Ekipmanlar" },
-    { src: "/images/gallery/vs-04.jpg", label: "RGB Setup" },
   ];
 
   const promos = [
@@ -1500,7 +1501,7 @@ function RezervasyonSection() {
   const buildWhatsAppMsg = (phoneLabel?: string) => {
     const sube = subeler.find(s => s.id === selected.sube)?.name || "";
     const paket = paketler.find(p => p.id === selected.paket)?.name || "";
-    return `🎮 *VERSUS GAME CENTER — Rezervasyon*\n\n👤 Ad: ${selected.ad || "Belirtilmedi"}\n📞 Tel: ${selected.tel || "Belirtilmedi"}\n📍 Şube: ${sube}${phoneLabel ? ` (${phoneLabel})` : ""}\n📦 Paket: ${paket}\n🕐 Saat: ${selected.saat}\n👥 Kişi: ${selected.kisi}\n📅 Tarih: ${new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}\n\nOnay bekliyorum, teşekkürler! 🙏`;
+    return `🎮 *SALİH FX GAME CENTER — Rezervasyon*\n\n👤 Ad: ${selected.ad || "Belirtilmedi"}\n📞 Tel: ${selected.tel || "Belirtilmedi"}\n📍 Şube: ${sube}${phoneLabel ? ` (${phoneLabel})` : ""}\n📦 Paket: ${paket}\n🕐 Saat: ${selected.saat}\n👥 Kişi: ${selected.kisi}\n📅 Tarih: ${new Date().toLocaleDateString("tr-TR", { day: "numeric", month: "long", year: "numeric" })}\n\nOnay bekliyorum, teşekkürler! 🙏`;
   };
 
   const whatsappNums = [
@@ -1830,7 +1831,7 @@ function Footer() {
         {/* Logo + Brand */}
         <div className="flex items-center gap-3 sm:gap-4 mb-8 sm:mb-10 text-center">
           <div className="relative mx-auto h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 shrink-0 overflow-hidden rounded-xl ring-1 ring-[#ff8c00]/20">
-            <img src="/versus-logo-new.png" alt="V" className="h-full w-full object-cover" />
+            <img src="/images/salihfx-logo.png" alt="SF" className="h-full w-full object-cover" />
           </div>
           <div className="text-center">
             <p className="text-[16px] sm:text-[18px] md:text-[20px] font-black tracking-[0.2em] neon-text uppercase gallery-rgb-glow">SALİH FX</p>
@@ -2299,10 +2300,10 @@ export default function Home() {
       <Header />
       <Hero />
       <NeonMarquee />
-      <RgbGameStrip image="/images/games/rgb/gaming-setup-1.png" label="Premium Gaming Setup" />
+      <RgbGameStrip image="/images/luxury/luxury-gaming-setup.png" label="Premium Gaming Setup" />
       <FeatureChips />
       <HizmetlerSection />
-      <RgbGameStrip image="/images/games/rgb/fps-gaming.png" label="PC Gaming Deneyimi" />
+      <RgbGameStrip image="/images/luxury/luxury-pc-closeup.png" label="RTX Gaming Deneyimi" />
       {/* Separator — Cyan */}
       <div className="relative z-10 mx-auto max-w-md sm:max-w-xl md:max-w-2xl lg:max-w-3xl xl:max-w-4xl px-4 sm:px-6"><div className="h-px bg-gradient-to-r from-transparent via-cyan-500/30 to-transparent my-2" /></div>
 
